@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".categoryManagement.categories"
+    android:background="#e6cfcf">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <EditText
+                android:id="@+id/catName"
+                android:layout_width="205dp"
+                android:layout_height="36dp"
+                android:layout_marginTop="200dp"
+                android:autofillHints=""
+                android:background="@android:color/transparent"
+                android:gravity="center_horizontal"
+                android:hint="@string/enter_new_category"
+                android:inputType="text"
+                android:maxLines="1"
+                android:textColor="@android:color/holo_blue_dark"
+                android:textColorHint="@android:color/holo_blue_dark"
+                app:layout_constraintBottom_toTopOf="@+id/addCat_bt"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/deleteCat"
+                android:layout_width="205dp"
+                android:layout_height="36dp"
+                android:autofillHints=""
+                android:background="@android:color/transparent"
+                android:gravity="center_horizontal"
+                android:hint="@string/enter_category_to_delete"
+                android:inputType="text"
+                android:maxLines="1"
+                android:textColor="@android:color/holo_blue_dark"
+                android:textColorHint="@android:color/holo_blue_dark"
+                app:layout_constraintBottom_toTopOf="@+id/deleteCat_bt"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.501"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/addCat_bt" />
+
+            <Button
+                android:id="@+id/addCat_bt"
+                android:layout_width="145dp"
+                android:layout_height="40dp"
+                android:text="@string/add_category"
+                app:layout_constraintBottom_toTopOf="@+id/deleteCat"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.501"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/catName" />
+
+            <Button
+                android:id="@+id/deleteCat_bt"
+                android:layout_width="145dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="134dp"
+                android:layout_marginEnd="132dp"
+                android:layout_marginBottom="8dp"
+                android:text="@string/delete"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.494"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/deleteCat" />
+
+            <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+                android:id="@+id/refreshVids"
+                android:layout_width="477dp"
+                android:layout_height="168dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginBottom="8dp"
+                app:layout_constraintBottom_toTopOf="@+id/catName"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.153">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerViewCat"
+                    android:layout_width="match_parent"
+                    android:layout_height="294dp" />
+            </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+
+</FrameLayout>

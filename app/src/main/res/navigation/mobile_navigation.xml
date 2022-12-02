@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/nav_home">
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="de.unituebingen.streamapp.Home.Home"
+        android:label="Home"
+        tools:layout="@layout/home_fragment">
+        <action
+            android:id="@+id/action_nav_home_to_nav_login"
+            app:destination="@id/nav_login"
+            app:popUpTo="@id/nav_home" />
+        <action
+            android:id="@+id/action_nav_home_to_nav_register"
+            app:destination="@id/nav_register"
+            app:popUpTo="@id/nav_home" />
+        <action
+            android:id="@+id/action_nav_home_to_playlists"
+            app:destination="@id/nav_categories"
+            app:popUpTo="@id/nav_home" />
+        <action
+            android:id="@+id/action_nav_home_to_user"
+            app:destination="@id/nav_profile" />
+        <action
+            android:id="@+id/action_nav_home_to_nav_profile"
+            app:destination="@id/nav_profile"
+            app:popUpTo="@id/nav_home" />
+        <action
+            android:id="@+id/action_nav_home_to_videos"
+            app:destination="@id/nav_videos" />
+        <action
+            android:id="@+id/action_nav_home_to_videoUpload"
+            app:destination="@id/videoUpload" />
+        <action
+            android:id="@+id/action_nav_home_to_nav_myVideoView"
+            app:destination="@id/nav_myVideoView"
+            app:enterAnim="@anim/slide_down" />
+        <action
+            android:id="@+id/action_nav_home_to_playlists2"
+            app:destination="@id/nav_playlists" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_login"
+        android:name="de.unituebingen.streamapp.login.Login"
+        android:label="Login"
+        tools:layout="@layout/login_fragment">
+        <action
+            android:id="@+id/action_nav_login_to_nav_register"
+            app:destination="@id/nav_register"
+            app:enterAnim="@anim/slide_up"
+            app:popUpTo="@id/nav_home" />
+        <action
+            android:id="@+id/action_nav_login_to_nav_home"
+            app:destination="@id/nav_home"
+            app:enterAnim="@anim/slide_down" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_register"
+        android:name="de.unituebingen.streamapp.register.Register"
+        android:label="Register"
+        tools:layout="@layout/register_fragment">
+        <action
+            android:id="@+id/action_nav_register_to_nav_home"
+            app:destination="@id/nav_home"
+            app:enterAnim="@anim/slide_down" />
+        <action
+            android:id="@+id/action_nav_register_to_nav_login"
+            app:destination="@id/nav_login"
+            app:enterAnim="@anim/slide_up" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_categories"
+        android:name="de.unituebingen.streamapp.categoryManagement.categories"
+        android:label="Categories"
+        tools:layout="@layout/categories_fragment" >
+        <action
+            android:id="@+id/action_nav_categories_to_vidsByCat"
+            app:destination="@id/vidsByCat"
+            app:enterAnim="@anim/slide_up"
+            app:popUpTo="@id/nav_categories"
+            app:popUpToInclusive="false" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_profile"
+        android:name="de.unituebingen.streamapp.profileManagement.Profile"
+        android:label="Profile"
+        tools:layout="@layout/profile_fragment" />
+    <fragment
+        android:id="@+id/nav_videos"
+        android:name="de.unituebingen.streamapp.Videos.Videos"
+        android:label="Videos"
+        tools:layout="@layout/videos_fragment">
+        <action
+            android:id="@+id/action_nav_videos_to_myVideoView"
+            app:destination="@id/nav_myVideoView"
+            app:enterAnim="@anim/slide_up"
+            app:popUpTo="@id/nav_videos" />
+        <action
+            android:id="@+id/action_nav_videos_to_myVideos"
+            app:destination="@id/myVideos"
+            app:enterAnim="@anim/slide_up"
+            app:popUpTo="@id/nav_videos" />
+        <action
+            android:id="@+id/action_nav_videos_to_addVidToPlaylist"
+            app:destination="@id/addVidToPlaylist"
+            app:enterAnim="@anim/slide_up"
+            app:popUpTo="@id/nav_videos" />
+        <action
+            android:id="@+id/action_nav_videos_to_addVidToCat"
+            app:destination="@id/addVidToCat"
+            app:enterAnim="@anim/slide_up" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_myVideoView"
+        android:name="de.unituebingen.streamapp.Videos.VideoView.MyVideoView"
+        tools:layout="@layout/myvideo_view_fragment" >
+        <action
+            android:id="@+id/action_nav_myVideoView_to_fullscreenFragment"
+            app:destination="@id/fullscreenFragment"
+            app:enterAnim="@anim/fragment_fade_enter"
+            app:popUpTo="@id/nav_myVideoView" />
+    </fragment>
+    <fragment
+        android:id="@+id/videoUpload"
+        android:name="de.unituebingen.streamapp.VideoUpload.VideoUpload"
+        android:label="VideoUpload" />
+    <fragment
+        android:id="@+id/nav_playlists"
+        android:name="de.unituebingen.streamapp.playlistManagement.playlists"
+        android:label="playlists" >
+        <action
+            android:id="@+id/action_nav_playlists_to_nav_playlist"
+            app:destination="@id/nav_playlist"
+            app:enterAnim="@anim/slide_up"
+            app:popUpTo="@id/nav_playlists" />
+        <action
+            android:id="@+id/action_nav_playlists_to_myPl"
+            app:destination="@id/myPl"
+            app:enterAnim="@anim/slide_up"
+            app:popUpTo="@id/nav_playlists" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_playlist"
+        android:name="de.unituebingen.streamapp.playlistManagement.playlist.playlist"
+        android:label="playlist"
+        tools:layout="@layout/playlist_fragment" >
+        <action
+            android:id="@+id/action_nav_playlist_to_nav_myVideoView"
+            app:destination="@id/nav_myVideoView"
+            app:enterAnim="@anim/slide_down" />
+    </fragment>
+    <fragment
+        android:id="@+id/myVideos"
+        android:name="de.unituebingen.streamapp.Videos.myVideos.myVideos"
+        android:label="my Videos"
+        tools:layout="@layout/my_videos_fragment">
+        <action
+            android:id="@+id/action_myVideos_to_nav_myVideoView"
+            app:destination="@id/nav_myVideoView"
+            app:enterAnim="@anim/slide_down"
+            app:popUpTo="@id/myVideos" />
+    </fragment>
+    <fragment
+        android:id="@+id/addVidToPlaylist"
+        android:name="de.unituebingen.streamapp.playlistManagement.addToPl.addVidToPlaylist"
+        android:label="add video to playlist"
+        tools:layout="@layout/add_vid_to_playlist_fragment" >
+        <action
+            android:id="@+id/action_addVidToPlaylist_to_nav_home"
+            app:destination="@id/nav_home"
+            app:enterAnim="@anim/slide_down" />
+    </fragment>
+    <fragment
+        android:id="@+id/vidsByCat"
+        android:name="de.unituebingen.streamapp.categoryManagement.VideosFromCat.VidsByCat"
+        android:label="videos of category"
+        tools:layout="@layout/vids_by_cat_fragment" >
+        <action
+            android:id="@+id/action_vidsByCat_to_nav_myVideoView"
+            app:destination="@id/nav_myVideoView"
+            app:enterAnim="@anim/slide_down" />
+    </fragment>
+    <fragment
+        android:id="@+id/fullscreenFragment"
+        android:name="de.unituebingen.streamapp.Videos.VideoView.FullscreenFragment"
+        android:label="fullscreen"
+        tools:layout="@layout/fragment_fullscreen" />
+    <fragment
+        android:id="@+id/myPl"
+        android:name="de.unituebingen.streamapp.playlistManagement.myPl.myPl"
+        android:label="my Playlists"
+        tools:layout="@layout/my_pl_fragment" >
+        <action
+            android:id="@+id/action_myPl_to_nav_playlist"
+            app:destination="@id/nav_playlist"
+            app:enterAnim="@anim/slide_down" />
+    </fragment>
+    <fragment
+        android:id="@+id/addVidToCat"
+        android:name="de.unituebingen.streamapp.categoryManagement.addVidToCat.addVidToCat"
+        android:label="add Video to category"
+        tools:layout="@layout/add_vid_to_cat_fragment" >
+        <action
+            android:id="@+id/action_addVidToCat_to_nav_videos"
+            app:destination="@id/nav_videos"
+            app:enterAnim="@anim/slide_down" />
+    </fragment>
+</navigation>

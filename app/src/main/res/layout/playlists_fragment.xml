@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frameLayout6"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#e6cfcf"
+    tools:context=".categoryManagement.categories">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewPublicPlaylists"
+        android:layout_width="256dp"
+        android:layout_height="346dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="32dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+    <EditText
+        android:id="@+id/playlistName"
+        android:layout_width="138dp"
+        android:layout_height="24dp"
+        android:layout_marginStart="137dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="136dp"
+        android:layout_marginBottom="8dp"
+        android:autofillHints=""
+        android:background="@android:color/transparent"
+        android:gravity="center_horizontal"
+        android:hint="@string/enter_new_playlist"
+        android:inputType="text"
+        android:maxLines="1"
+        android:textColor="@android:color/holo_blue_dark"
+        android:textColorHint="@android:color/holo_blue_dark"
+        app:layout_constraintBottom_toTopOf="@+id/addPlaylist_bt"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/myPl_btn" />
+
+    <Button
+        android:id="@+id/addPlaylist_bt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="39dp"
+        android:text="create Playlist"
+        android:textSize="10sp"
+        app:layout_constraintBottom_toTopOf="@+id/textView2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/playlistName" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="115dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="Public Playlists:"
+        app:layout_constraintBottom_toTopOf="@+id/recyclerViewPublicPlaylists"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/addPlaylist_bt" />
+
+    <Button
+        android:id="@+id/myPl_btn"
+        android:layout_width="140dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="137dp"
+        android:layout_marginTop="110dp"
+        android:layout_marginEnd="134dp"
+        android:layout_marginBottom="16dp"
+        android:text="my Playlists"
+        android:textSize="10sp"
+        app:layout_constraintBottom_toTopOf="@+id/playlistName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewDeleteSub"
+        android:layout_width="90dp"
+        android:layout_height="57dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="288dp"
+        android:layout_marginEnd="42dp"
+        android:layout_marginBottom="60dp"
+        android:text="swipe right do delete a playlist, swipe left to subscribe"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="11sp"
+        app:layout_constraintBottom_toTopOf="@+id/recyclerViewPublicPlaylists"
+        app:layout_constraintEnd_toStartOf="@+id/textView2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

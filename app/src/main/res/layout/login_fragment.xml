@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:background="#e6cfcf"
+    android:orientation="vertical">
+    <!--look of main Layout-->
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:contentDescription="@string/string_app_logo"
+        android:src="@drawable/logo" />
+    <!--logo at the top-->
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/round_edit"
+        android:padding="10dp">
+        <!--box around Username-->
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="25dp"
+            android:contentDescription="@string/userpicture"
+            android:src="@drawable/ic_person" />
+        <!--little dude at the left-->
+
+        <EditText
+            android:id="@+id/log_user"
+            android:layout_width="200dp"
+            android:layout_height="match_parent"
+            android:autofillHints=""
+            android:background="@android:color/transparent"
+            android:hint="@string/enter_username"
+            android:inputType="text"
+            android:maxLines="1"
+            android:textColor="@android:color/holo_blue_dark"
+            android:textColorHint="@android:color/holo_blue_dark" />
+        <!--text for username-->
+
+
+    </LinearLayout>  <!--username Login-->
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/round_edit"
+        android:padding="10dp">
+        <!--box around password-->
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="25dp"
+            android:contentDescription="@string/lockpicture"
+            android:src="@drawable/ic__lock" />
+        <!--little lock at the left-->
+
+        <EditText
+            android:id="@+id/log_password"
+            android:layout_width="200dp"
+            android:layout_height="match_parent"
+            android:autofillHints=""
+            android:background="@android:color/transparent"
+            android:hint="@string/enter_password"
+            android:inputType="textPassword"
+            android:maxLines="1"
+            android:textColor="@android:color/holo_blue_dark"
+            android:textColorHint="@android:color/holo_blue_dark" />
+        <!--text for password-->
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/log_bt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/round_button"
+        android:clickable="true"
+        android:text="@string/login"
+        android:textColor="@android:color/white" />
+    <!--Login button-->
+
+    <Button
+        android:id="@+id/toRegister_bt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/round_button"
+        android:clickable="true"
+        android:text="@string/register"
+        android:textColor="@android:color/white" />
+    <!--register button-->
+
+</LinearLayout>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+
+    <group
+        android:id="@+id/LogReg"
+        android:enabled="true"
+        android:visible="true">
+        <item
+            android:id="@+id/nav_login"
+            android:title="@string/login" />
+        <item
+            android:id="@+id/nav_register"
+            android:title="@string/register" />
+    </group>
+
+    <group
+        android:id="@+id/afterAuth"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:title="@string/home" />
+        <item
+            android:id="@+id/nav_categories"
+            android:title="@string/categories" />
+        <item
+            android:id="@+id/nav_videos"
+            android:title="@string/videos" />
+        <item
+            android:id="@+id/nav_playlists"
+            android:title="@string/playlists" />
+        <item
+            android:id="@+id/nav_profile"
+            android:title="@string/profile"/>
+        <item
+            android:id="@+id/videoUpload"
+            android:title="@string/hochladen" />
+        <item
+            android:id="@+id/nav_logout"
+            android:title="@string/logout"/>
+    </group>
+
+</menu>

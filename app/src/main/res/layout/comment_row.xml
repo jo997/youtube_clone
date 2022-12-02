@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:paddingBottom="5dp"
+        android:paddingTop="5dp"
+        android:background="#c2bebb">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+
+        android:layout_width="356dp"
+        android:layout_height="39dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="2dp"
+        android:background="#CAC5C1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+        <TextView
+            android:id="@+id/text_comments"
+            android:layout_width="186dp"
+            android:layout_height="34dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="1dp"
+            android:background="#CAC5C1"
+            android:gravity="left"
+            android:text="@string/comments"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/authotText"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.52" />
+
+        <TextView
+            android:id="@+id/commentAuthor"
+            android:layout_width="105dp"
+            android:layout_height="13dp"
+            android:layout_marginTop="28dp"
+            android:gravity="left"
+            android:textSize="9sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/authotText"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/authotText"
+            android:layout_width="31dp"
+            android:layout_height="11dp"
+            android:layout_marginStart="1dp"
+            android:layout_marginTop="26dp"
+            android:text="@string/author"
+            android:textSize="9sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/commentAuthor"
+            app:layout_constraintStart_toEndOf="@+id/text_comments"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/postedText"
+            android:layout_width="41dp"
+            android:layout_height="15dp"
+            android:layout_marginTop="3dp"
+            android:layout_marginEnd="1dp"
+            android:layout_marginBottom="8dp"
+            android:text="posted:"
+            android:textSize="9sp"
+            app:layout_constraintBottom_toTopOf="@+id/authotText"
+            app:layout_constraintEnd_toStartOf="@+id/commentTimeStamp"
+            app:layout_constraintStart_toEndOf="@+id/text_comments"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/commentTimeStamp"
+            android:layout_width="113dp"
+            android:layout_height="23dp"
+            android:layout_marginBottom="1dp"
+            android:textSize="9sp"
+            app:layout_constraintBottom_toTopOf="@+id/commentAuthor"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/postedText"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frameLayout4"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/cardview_dark_background"
+    android:theme="@style/ThemeOverlay.StreamApp.FullscreenContainer"
+    tools:context=".Videos.VideoView.FullscreenFragment">
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/buttonPlay"
+        android:layout_width="82dp"
+        android:layout_height="29dp"
+        android:layout_marginBottom="11dp"
+        android:text="play"
+        android:textSize="8sp"
+        app:layout_anchor="@+id/videoView2"
+        app:layout_anchorGravity="top|center" />
+
+    <VideoView
+        android:id="@+id/videoView2"
+        android:layout_width="680dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="24dp"
+        app:layout_anchor="@+id/linearLayout2"
+        app:layout_anchorGravity="center" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

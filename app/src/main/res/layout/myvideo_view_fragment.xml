@@ -1,0 +1,337 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/relativeLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:orientation="vertical"
+    app:layoutDescription="@xml/myvideo_view_fragment_scene">
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#c2bebb">
+
+
+            <VideoView
+                android:id="@+id/videoView"
+                android:layout_width="396dp"
+                android:layout_height="325dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="7dp"
+                android:layout_marginBottom="2dp"
+                app:layout_constraintBottom_toTopOf="@+id/textViewUpload"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/uploadName_txt" />
+
+            <Button
+                android:id="@+id/play_btn"
+                android:layout_width="135dp"
+                android:layout_height="43dp"
+                android:layout_marginBottom="27dp"
+                android:onClick="playVideo"
+                android:text="@string/play"
+                app:layout_constraintBottom_toTopOf="@+id/textViewDesc"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/uploadDateText" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvComments"
+                android:layout_width="377dp"
+                android:layout_height="460dp"
+                android:layout_marginStart="18dp"
+                android:layout_marginEnd="16dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/comments_title" />
+
+            <TextView
+                android:id="@+id/vid_description"
+                android:layout_width="265dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="11dp"
+                android:layout_marginTop="31dp"
+                android:layout_marginEnd="42dp"
+                android:layout_marginBottom="14dp"
+                android:text="@string/description"
+                android:textColor="#000000"
+                android:textSize="22sp"
+                app:layout_constraintBottom_toTopOf="@+id/ratingBar"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/titleText"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/titleText"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_marginStart="29dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="11dp"
+                android:layout_marginBottom="32dp"
+                android:text="@string/title"
+                android:textColor="#3E3D3D"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toTopOf="@+id/uploadadBy"
+                app:layout_constraintEnd_toStartOf="@+id/vid_description"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/comments_title"
+                android:layout_width="82dp"
+                android:layout_height="28dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginEnd="305dp"
+                android:text="@string/comments3"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toTopOf="@+id/rvComments"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/addComment" />
+
+            <RatingBar
+                android:id="@+id/ratingBar"
+                style="?android:attr/ratingBarStyleSmall"
+                android:layout_width="82dp"
+                android:layout_height="19dp"
+                android:layout_marginStart="54dp"
+                android:layout_marginTop="14dp"
+                android:layout_marginEnd="30dp"
+                android:layout_marginBottom="24dp"
+                android:numStars="5"
+                android:progressTint="#FFCC01"
+                app:layout_constraintBottom_toTopOf="@+id/videoView"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/uploadName_txt"
+                app:layout_constraintTop_toBottomOf="@+id/vid_description" />
+
+            <EditText
+                android:id="@+id/addComment"
+                android:layout_width="281dp"
+                android:layout_height="56dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="106dp"
+                android:ems="10"
+                android:gravity="start|top"
+                android:inputType="textMultiLine"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/youComment_txt" />
+
+            <Button
+                android:id="@+id/add_comment_btn"
+                android:layout_width="76dp"
+                android:layout_height="37dp"
+                android:layout_marginStart="35dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="149dp"
+                android:layout_marginBottom="11dp"
+                android:text="@string/add"
+                app:layout_constraintBottom_toTopOf="@+id/addComment"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/youComment_txt"
+                app:layout_constraintTop_toBottomOf="@+id/rating_bt" />
+
+            <TextView
+                android:id="@+id/youComment_txt"
+                android:layout_width="109dp"
+                android:layout_height="19dp"
+                android:layout_marginStart="42dp"
+                android:layout_marginTop="17dp"
+                android:layout_marginEnd="260dp"
+                android:layout_marginBottom="1dp"
+                android:text="@string/write_a_comment"
+                app:layout_constraintBottom_toTopOf="@+id/addComment"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/rating_bt" />
+
+            <TextView
+                android:id="@+id/textViewDescription"
+                android:layout_width="379dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="3dp"
+                android:layout_marginEnd="24dp"
+                android:background="#CAC7C5"
+                android:padding="2dp"
+                app:layout_constraintBottom_toTopOf="@+id/textView"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textViewDesc" />
+
+            <TextView
+                android:id="@+id/textViewDesc"
+                android:layout_width="111dp"
+                android:layout_height="19dp"
+                android:layout_marginStart="42dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="258dp"
+                android:layout_marginBottom="2dp"
+                android:text="@string/video_description"
+                app:layout_constraintBottom_toTopOf="@+id/textViewDescription"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/play_btn" />
+
+            <Button
+                android:id="@+id/rating_bt"
+                android:layout_width="138dp"
+                android:layout_height="46dp"
+                android:layout_marginStart="124dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="149dp"
+                android:layout_marginBottom="24dp"
+                android:text="@string/add_rating"
+                app:layout_constraintBottom_toTopOf="@+id/add_comment_btn"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="34dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="19dp"
+                android:layout_marginEnd="187dp"
+                android:layout_marginBottom="8dp"
+                android:text="@string/_5"
+                app:layout_constraintBottom_toTopOf="@+id/rating_bt"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/yourRating"
+                app:layout_constraintTop_toBottomOf="@+id/textViewDescription" />
+
+            <EditText
+                android:id="@+id/yourRating"
+                android:layout_width="32dp"
+                android:layout_height="23dp"
+                android:layout_marginStart="158dp"
+                android:layout_marginTop="19dp"
+                android:layout_marginEnd="9dp"
+                android:layout_marginBottom="15dp"
+                android:background="#8F8B8B"
+                android:ems="5"
+                android:gravity="start|top"
+                android:inputType="numberDecimal"
+                android:padding="3dp"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toTopOf="@+id/rating_bt"
+                app:layout_constraintEnd_toStartOf="@+id/textView"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textViewDescription"
+                tools:ignore="TextViewEdits" />
+
+            <TextView
+                android:id="@+id/textViewVidViews"
+                android:layout_width="42dp"
+                android:layout_height="19dp"
+                android:layout_marginStart="91dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="2dp"
+                android:layout_marginBottom="78dp"
+                android:text="@string/views"
+                app:layout_constraintBottom_toTopOf="@+id/play_btn"
+                app:layout_constraintEnd_toStartOf="@+id/textVideoViews"
+                app:layout_constraintStart_toEndOf="@+id/uploadDateText"
+                app:layout_constraintTop_toBottomOf="@+id/videoView" />
+
+            <TextView
+                android:id="@+id/textVideoViews"
+                android:layout_width="52dp"
+                android:layout_height="17dp"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="48dp"
+                android:layout_marginBottom="199dp"
+                app:layout_constraintBottom_toTopOf="@+id/textViewDescription"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/textViewVidViews"
+                app:layout_constraintTop_toBottomOf="@+id/videoView" />
+
+            <TextView
+                android:id="@+id/textViewUpload"
+                android:layout_width="wrap_content"
+                android:layout_height="19dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginEnd="151dp"
+                android:layout_marginBottom="8dp"
+                android:text="@string/upload_date"
+                app:layout_constraintBottom_toTopOf="@+id/uploadDateText"
+                app:layout_constraintEnd_toStartOf="@+id/textViewVidViews"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/videoView" />
+
+            <TextView
+                android:id="@+id/uploadDateText"
+                android:layout_width="153dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginEnd="242dp"
+                android:layout_marginBottom="21dp"
+                app:layout_constraintBottom_toTopOf="@+id/play_btn"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textViewUpload" />
+
+            <TextView
+                android:id="@+id/uploadadBy"
+                android:layout_width="88dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginEnd="13dp"
+                android:layout_marginBottom="16dp"
+                android:text="@string/uploaded_by"
+                app:layout_constraintBottom_toTopOf="@+id/videoView"
+                app:layout_constraintEnd_toStartOf="@+id/uploadName_txt"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/titleText" />
+
+            <TextView
+                android:id="@+id/uploadName_txt"
+                android:layout_width="131dp"
+                android:layout_height="23dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginBottom="34dp"
+                app:layout_constraintBottom_toTopOf="@+id/videoView"
+                app:layout_constraintEnd_toStartOf="@+id/ratingBar"
+                app:layout_constraintStart_toEndOf="@+id/uploadadBy"
+                app:layout_constraintTop_toBottomOf="@+id/vid_description" />
+
+            <Button
+                android:id="@+id/fullscreen_bt"
+                android:layout_width="91dp"
+                android:layout_height="31dp"
+                android:layout_marginStart="124dp"
+                android:layout_marginTop="6dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="162dp"
+                android:text="fullscreen"
+                android:textSize="8sp"
+                app:layout_constraintBottom_toTopOf="@+id/textViewDescription"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/uploadDateText"
+                app:layout_constraintTop_toBottomOf="@+id/textViewVidViews" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+
+</FrameLayout>
